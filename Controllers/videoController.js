@@ -1,13 +1,13 @@
 import Video from "../Models/videoSchema.js"; // Import the video model
 
 export const createVideos = async (req, res) => {
-  const { imgUrl, videoUrl } = req.body;
+  const { imgUrl } = req.body;
 
   // Validate input
-  if (!imgUrl || !videoUrl) {
+  if (!imgUrl) {
     return res
       .status(400)
-      .json({ message: "imgUrl & videoUrl fields are required" });
+      .json({ message: "imgUrl fields are required" });
   }
 
   try {
