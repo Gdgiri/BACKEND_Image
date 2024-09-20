@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { MongoDB } from "./Database/config.js";
-import { createVideos } from "./Controllers/videoController.js";
+import router from "./Routes/video.js";
 
 dotenv.config();
 
@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 
 //API Routes
 
-app.use("/api", createVideos);
+app.use("/api", router);
 
 // Listen
 app.listen(port, () => {
