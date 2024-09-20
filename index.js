@@ -12,7 +12,8 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
     credentials: true,
   })
 );
@@ -44,7 +45,7 @@ app.get("/", (req, res) => {
 
 //API Routes
 
-app.use("/api/video", createVideos);
+app.use("/api", createVideos);
 
 // Listen
 app.listen(port, () => {
