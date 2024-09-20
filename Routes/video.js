@@ -6,5 +6,5 @@ const router = express.Router();
 router.post("/", createVideos);
 
 // GET request for retrieving video by ID
-router.get("videos/:_id", getUrlById);
+router.get("videos/:id", getUrlById);
 export default router;
